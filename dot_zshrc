@@ -1,0 +1,39 @@
+# ALIAS
+alias be="bundle exec"
+alias bepi="bundle exec pod install"
+alias ll="ls -la"
+alias cpe="killall Xcode; ./cash project edit"
+
+# ENV_VARS
+unset JAVA_HOME
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export GITHUB_ACCESS_TOKEN=$(cat ~/github_access_token.txt)
+export ANDROID_SDK_ROOT='/Users/mbeyer/Library/Android/sdk'
+
+# PATH
+export PATH="$PATH:$HOME/.rvm/bin:$JAVA_HOME"
+
+function upfind() {
+  dir=`pwd`
+  while [ "$dir" != "/" ]; do
+    p=`find "$dir" -maxdepth 1 -name $1`
+    if [ ! -z $p ]; then
+      echo "$p"
+      return
+    fi
+    dir=`dirname "$dir"`
+  done
+}
+
+function gw() {
+  GW="$(upfind gradlew)"
+  if [ -z "$GW" ]; then
+    echo "Gradle wrapper not found."
+  elif [[ " $* " =~ " -p " ]]; then
+    "$GW" --profile $@
+  else
+    "$GW" -p $(dirname "$GW") --profile $@
+  fi
+}
+
+alias killd='jps | grep Daemon | cut -d'\'' '\'' -f1 | xargs kill -9'

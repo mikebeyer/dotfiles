@@ -1,0 +1,33 @@
+[user]
+	name = Mike Beyer
+	email = mbeyer@squareup.com
+
+[github]
+	user = mikebeyer
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[alias]
+	s = stash
+	sa = stash apply
+	sl = stash list
+	sp = stash pop
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	axe = log -p -S
+	d = diff --word-diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %cn)%Creset' --abbrev-commit --date=relative
+	lgs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %cn)%Creset' --abbrev-commit --date=relative --shortstat
+	undo-commit = reset --soft HEAD^
+	staged = diff --cached
+	amend = commit --amend
+	checkws = diff master..HEAD --check
+	ff = pull --ff-only
+	rb = rebase
+	gp = push origin HEAD
+	update = submodule update --init --recursive
+	amend = commit --amend --no-edit
+	ammend = commit --amend --no-edit
