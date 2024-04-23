@@ -20,5 +20,3 @@ export ANDROID_SDK_ROOT='/Users/mbeyer/Library/Android/sdk'
 
 # PATH
 export PATH="$PATH:$HOME/.rvm/bin:$JAVA_HOME"
-
-PS1="%n@%m %1~ %#"
