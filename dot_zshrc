@@ -20,3 +20,13 @@ export ANDROID_SDK_ROOT='/Users/mbeyer/Library/Android/sdk'
 
 # PATH
 export PATH="$PATH:$HOME/.rvm/bin:$JAVA_HOME"
+
+# PS1:q
+function git_prompt_info {
+  local ref=$(git symbolic-ref HEAD 2> /dev/null)
+  if [[ -n $ref ]]; then
+    echo "${PR_CYAN}(${ref#refs/heads/}$remote$state${PR_CYAN})${PR_WHITE}"
+  fi
+}
+
+export PS1='${SSH_CONNECTION+"%{$fg_bold[cyan]%}%n@%m:"}%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info):%? '
