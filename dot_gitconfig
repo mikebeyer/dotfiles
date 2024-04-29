@@ -8,6 +8,14 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 
+[diff]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+	trustExitCode = true
+
 [alias]
 	s = stash
 	sa = stash apply
