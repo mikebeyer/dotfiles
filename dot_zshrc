@@ -30,4 +30,4 @@ function git_prompt_info {
   fi
 }
 
-PROMPT='${SSH_CONNECTION+"%{$fg_bold[cyan]%}%n@%m:"}%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info):%? '
+PROMPT='${SSH_CONNECTION+"%{$fg_bold[cyan]%}%n@%m:"}%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info): '
