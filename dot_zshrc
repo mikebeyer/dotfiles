@@ -11,7 +11,7 @@ alias be="bundle exec"
 alias bepi="bundle exec pod install"
 alias ll="ls -la"
 alias cpe="killall Xcode; ./cash project edit"
-alias gitk='open -a SourceTree .'
+alias gitk="open -a SourceTree ."
 
 # ENV_VARS
 unset JAVA_HOME
