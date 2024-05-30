@@ -5,9 +5,6 @@
 [github]
 	user = mikebeyer
 
-[url "git@github.com:"]
-	insteadOf = https://github.com/
-
 [alias]
 	s = stash
 	sa = stash apply
