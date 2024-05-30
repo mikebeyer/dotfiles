@@ -31,3 +31,11 @@
 	update = submodule update --init --recursive
 	amend = commit --amend --no-edit
 	ammend = commit --amend --no-edit
+
+[diff]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+	trustExitCode = true
